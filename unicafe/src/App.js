@@ -1,5 +1,7 @@
 import { useState } from "react";
+import StatisticsLine from "./Components/StatisticsLine.jsx";
 import Buttons from "./Components/Buttons.jsx";
+import Nofeedback from "./Components/Nofeedback.jsx";
 function App() {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
@@ -21,14 +23,10 @@ function App() {
       <h1>Give FeedBack</h1>
       <Buttons btnGood={btnGood} btnBad={btnBad} btnNeutral={btnNeutral} />
       <h2>Statistics</h2>
-      <p>good: {good}</p>
-      <p>neutral: {neutral}</p>
-      <p>bad: {bad}</p>
-      <div>
-        <p>all: {good + bad + neutral}</p>
-        <p>average: {good - bad - 0}</p>
-        <p>positive: {0 || (good / (good + bad + neutral)) * 100}</p>
-      </div>
+      <StatisticsLine text={"good"} value={good} />
+      <StatisticsLine text={"bad"} value={bad} />
+      <StatisticsLine text={"neutral"} value={neutral} />
+      <Nofeedback good={good} neutral={neutral} bad={bad} />
     </div>
   );
 }
