@@ -25,7 +25,9 @@ function App() {
       <p>neutral: {neutral}</p>
       <p>bad: {bad}</p>
       <div>
-        <p>Average: {}</p>
+        <p>all: {good + bad + neutral}</p>
+        <p>average: {good - bad - 0}</p>
+        <p>positive: {0 || (good / (good + bad + neutral)) * 100}</p>
       </div>
     </div>
   );
