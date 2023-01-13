@@ -22,18 +22,20 @@ const App = () => {
   const changeNo = () => {
     setSelected(randomNumber);
     setRandomNumber(Math.floor(Math.random() * 7));
-    console.log("random number", randomNumber);
-  };
-
-  const voteAne = () => {
-    copy[randomNumber] += 1;
-    console.log(copy);
+    // console.log("random number", randomNumber);
   };
 
   const highestVote = Math.max(...copy);
-  const IndexOfTheHighestVote = vote.indexOf(highestVote);
+  const IndexOfTheHighestVote = copy.indexOf(highestVote);
+  const voteAne = () => {
+    copy[randomNumber] += 1;
+    console.log(highestVote);
+    console.log(copy);
+    console.log("Index of the highest vote", IndexOfTheHighestVote);
+  };
 
-  console.log(IndexOfTheHighestVote);
+  // console.log(IndexOfTheHighestVote);
+  // console.log(copy);
 
   return (
     <div>
